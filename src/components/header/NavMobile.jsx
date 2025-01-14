@@ -7,7 +7,7 @@ const NavMobile = ({ closeMenu }) => {
     { href: "/", label: "منهجية الشركة فى ادارة المشروع" },
     { href: "/", label: "مراحل انشاء المشروع" },
     { href: "/project-parts", label: "اجزاء المشروع" },
-    { href: "/", label: "المنصة و غرفة التحكم" },
+    { href: "/control-room", label: "المنصة و غرفة التحكم" },
     { href: "/", label: "شركاؤنا" },
     { href: "/", label: "تواصل معنا" },
   ];

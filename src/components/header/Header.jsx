@@ -71,7 +71,7 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to={"/"}
+                  to={"/control-room"}
                   className={(navClass) =>
                     `link text-textPrimary text-xs font-light capitalize opacity-75 ${
                       navClass.isActive ? "activeNav" : ""

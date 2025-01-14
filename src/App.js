@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoadingPage from "./pages/LoadingPage";
 import NotFound from "./pages/not-found/NotFound";
 import Projectparts from "./pages/Projectparts/Projectparts";
+import ControlRoomPage from "./pages/ControlRoom/ControlRoom";
 // import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -26,6 +27,14 @@ function App() {
           element: (
             <Suspense fallback={<LoadingPage />}>
               <Projectparts />
+            </Suspense>
+          ),
+        },
+        {
+          path: "control-room",
+          element: (
+            <Suspense fallback={<LoadingPage />}>
+              <ControlRoomPage />
             </Suspense>
           ),
         },
