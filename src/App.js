@@ -4,6 +4,7 @@ import MainLayout from "./components/Layouts/MainLayout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoadingPage from "./pages/LoadingPage";
 import NotFound from "./pages/not-found/NotFound";
+import Projectparts from "./pages/Projectparts/Projectparts";
 // import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -17,6 +18,14 @@ function App() {
           element: (
             <Suspense fallback={<LoadingPage />}>
               <Home />
+            </Suspense>
+          ),
+        },
+        {
+          path: "project-parts",
+          element: (
+            <Suspense fallback={<LoadingPage />}>
+              <Projectparts />
             </Suspense>
           ),
         },

@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         "custom-gradient": "linear-gradient(to top, #FFF, #C8A04F)",
+        "custom-gradient-img":
+          "linear-gradient(to left, #FFF, rgba(255, 255, 255, 0.00))",
       },
       boxShadow: {
         custom: "10px 20px 20px 0px rgba(110, 96, 69, 0.39)",
