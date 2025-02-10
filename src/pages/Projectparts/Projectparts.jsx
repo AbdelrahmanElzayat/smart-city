@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AboutPart from "../../components/ProjectPartsComponents/aboutPart/AboutPart";
 import ControlRoom from "../../components/ProjectPartsComponents/ControlRoom/ControlRoom";
 import DevicesConnections from "../../components/ProjectPartsComponents/DevicesConnections/DevicesConnections";
@@ -7,16 +7,34 @@ import Irrigation from "../../components/ProjectPartsComponents/irrigation/Irrig
 import SmartLight from "../../components/ProjectPartsComponents/smartLight/SmartLight";
 import ScreenControl from "../../components/ProjectPartsComponents/screenControl/ScreenControl";
 import Garden from "../../components/ProjectPartsComponents/garden/Garden";
-import controlRoom from "../../assets/images/controlRoom.png";
-import controlScreen from "../../assets/images/screen.png";
-import light from "../../assets/images/light.png";
+import controlRoom from "../../assets/images/controlRoom.webp";
+import controlScreen from "../../assets/images/screen.webp";
+import light from "../../assets/images/light.webp";
+import { motion } from "framer-motion";
 
 const Projectparts = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <div className="Projectparts">
+    <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2 }}
+      className="Projectparts"
+    >
+      <title>المدن الذكية | اجزاء المشروع</title>
+      <meta
+        name="description"
+        content="يتم تشغيل وتطوير مركز القيادة والتحكم من خلال أنظمة متقدمة تشمل الإضاءة الذكية، الري الآلي، أنظمة المرور الذكية، وشبكات الاتصال المتقدمة.
+ تم اختيار الانظمة الذكية بعناية لضمان تكاملها ودعم عمليات تحليل البيانات وتحسين الخدمات  ومكانية تطويرها في المستقبل"
+      />
+
       <AboutPart
         title="اجزاء المشروع"
-        description="لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسيسينغ إيليت، سيددو إيوسيمود تيمبور سوم دولار سيت أميت، كونسيكتيتور أديبيسيسينغ إيليت، سيددو إيوسيمود ت دولوريولف إنكيديدنت أوت لابوري إت دولوري ماجنا أليكوا. أوت إنيم أد مينيم فينيام وري إت دولوري مار أليكوا. أوت إنيم أد مينيم فينيام"
+        description="يتم تشغيل وتطوير مركز القيادة والتحكم من خلال أنظمة متقدمة تشمل الإضاءة الذكية، الري الآلي، أنظمة المرور الذكية، وشبكات الاتصال المتقدمة.
+ تم اختيار الانظمة الذكية بعناية لضمان تكاملها ودعم عمليات تحليل البيانات وتحسين الخدمات  ومكانية تطويرها في المستقبل"
       />
       <ControlRoom
         title="غرف التحكم"
@@ -38,6 +56,7 @@ const Projectparts = () => {
           "الإحصائيات التفصيلية عن المرافق والبلاغات​كراسة الشروط والمواصفات",
           "لوحات المعلومات التفاعلية",
         ]}
+        description="نظام الإنارة الذكية من Schréder يعتمد على تقنية التحكم عن بُعد ، مع مستشعرات مدمجة لتحسين كفاءة الإضاءة. يتميز بخاصية التعتيم التلقائي وفق الظروف المحيطة، مما يقلل استهلاك الطاقة ويوفر تجربة إضاءة متطورة"
         image={light}
       />
       <ScreenControl
@@ -48,10 +67,11 @@ const Projectparts = () => {
           "إدارة المهام: الربط مع نظام الرقابة على صيانة وتشغيل المرافق​ كراسة الشروط والمواصفات",
           "مراقبة الأداء عبر التقارير الدورية​ كراسة الشروط والمواصفات",
         ]}
+        description="شاشات العرض من Hikvision تتميز بجودة عرض فائقة بدقة 4K، مع تصميم نحيف للحواف لتحقيق تجربة عرض سلسة. تدعم التشغيل المستمر على مدار الساعة وتوفر أوضاع متعددة للتطبيقات مثل المراقبة والمؤتمرات، مما يجعلها مثالية لمراكز القيادة والتحكم"
         image={controlScreen}
       />
       <Garden />
-    </div>
+    </motion.div>
   );
 };
 

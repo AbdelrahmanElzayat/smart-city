@@ -1,8 +1,8 @@
 import React from "react";
-import op1 from "../../../assets/images/op1.png";
+import op1 from "../../../assets/images/op1.webp";
 import op2 from "../../../assets/images/op2.png";
-import op3 from "../../../assets/images/op3.png";
-import op4 from "../../../assets/images/op4.png";
+import op3 from "../../../assets/images/op3.webp";
+import op4 from "../../../assets/images/op4.webp";
 import OperationsCard from "./OperationsCard/OperationsCard";
 const Operations = () => {
   const data = [
@@ -43,8 +43,8 @@ const Operations = () => {
           </h2>
         </div>
         <div className="cardList grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6 my-7">
-          {data?.map((item,i) => (
-            <OperationsCard item={item} key={i}/>
+          {data?.map((item, i) => (
+            <OperationsCard item={item} key={i} />
           ))}
         </div>
       </div>

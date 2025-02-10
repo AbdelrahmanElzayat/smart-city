@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import logo from "../../assets/images/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/images/logo.webp";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 import NavMobile from "./NavMobile";
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <header className="py-3 md:py-4 lg:py-6 sticky top-0 left-0 w-full backdrop-blur-custom z-50">
+    <header className="py-3 md:py-4 lg:py-6 sticky top-0 left-0 w-full bg-[rgba(255,255,255,.5)] backdrop-blur-custom z-50">
       <div className="container">
         <div className="flex items-center justify-between gap-3">
           <div className="logo">
@@ -25,34 +25,37 @@ const Header = () => {
                 <NavLink
                   to={"/"}
                   className={(navClass) =>
-                    `link text-textPrimary text-xs font-light capitalize opacity-75 ${
+                    `link text-textPrimary text-sm lg:text-sm font-normal capitalize opacity-75 ${
                       navClass.isActive ? "activeNav" : ""
                     }`
                   }
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   الرئيسيـة
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to={"/"}
+                  to={"/project-methodology"}
                   className={(navClass) =>
-                    `link text-textPrimary text-xs font-light capitalize opacity-75 ${
+                    `link text-textPrimary text-sm lg:text-sm font-normal capitalize opacity-75 ${
                       navClass.isActive ? "activeNav" : ""
                     }`
                   }
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   منهجية الشركة فى ادارة المشروع
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to={"/"}
+                  to={"/project-stages"}
                   className={(navClass) =>
-                    `link text-textPrimary text-xs font-light capitalize opacity-75 ${
+                    `link text-textPrimary text-sm lg:text-sm font-normal capitalize opacity-75 ${
                       navClass.isActive ? "activeNav" : ""
                     }`
                   }
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   مراحل انشاء المشروع
                 </NavLink>
@@ -61,10 +64,11 @@ const Header = () => {
                 <NavLink
                   to={"/project-parts"}
                   className={(navClass) =>
-                    `link text-textPrimary text-xs font-light capitalize opacity-75 ${
+                    `link text-textPrimary text-sm lg:text-sm font-normal capitalize opacity-75 ${
                       navClass.isActive ? "activeNav" : ""
                     }`
                   }
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   اجزاء المشروع
                 </NavLink>
@@ -73,34 +77,36 @@ const Header = () => {
                 <NavLink
                   to={"/control-room"}
                   className={(navClass) =>
-                    `link text-textPrimary text-xs font-light capitalize opacity-75 ${
+                    `link text-textPrimary text-sm lg:text-sm font-normal capitalize opacity-75 ${
                       navClass.isActive ? "activeNav" : ""
                     }`
                   }
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   المنصة و غرفة التحكم
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to={"/"}
+                  to={"/partners"}
                   className={(navClass) =>
-                    `link text-textPrimary text-xs font-light capitalize opacity-75 ${
+                    `link text-textPrimary text-sm lg:text-sm font-normal capitalize opacity-75 ${
                       navClass.isActive ? "activeNav" : ""
                     }`
                   }
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   شركاؤنا
                 </NavLink>
               </li>
             </ul>
           </nav>
-          <Link
-            to={"/"}
+          <a
+            href={"#contact-us"}
             className="hidden lg:block rounded-lg bg-[#C8A04F] shadow-custom py-3 px-6 text-white text-xs font-normal text-center"
           >
             تواصل معنا
-          </Link>
+          </a>
           <button
             className="md:hidden text-[#C8A04F] text-2xl"
             onClick={toggleMobileNav}

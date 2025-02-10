@@ -1,13 +1,15 @@
-import React from "react";
-import smartCity from "../../../assets/images/smartCity.png";
-import lines from "../../../assets/images/lines.png";
-import whatsapp from "../../../assets/icons/whatsapp.svg";
-import youtube from "../../../assets/icons/youtube.svg";
-import twitter from "../../../assets/icons/twitter.svg";
+import React, { useState } from "react";
+import smartCity from "../../../assets/images/smartCity.webp";
+import lines from "../../../assets/images/lines.webp";
 import quote from "../../../assets/icons/quote.svg";
 import play from "../../../assets/icons/play.svg";
-import { Link } from "react-router-dom";
+// import whatsapp from "../../../assets/icons/whatsapp.svg";
+// import youtube from "../../../assets/icons/youtube.svg";
+// import twitter from "../../../assets/icons/twitter.svg";
+import ModalSuccess from "./ModalSuccess";
+import { motion } from "framer-motion";
 const Hero = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="Hero min-h-[calc(100vh-80px)] py-10">
       <div className="container">
@@ -20,13 +22,22 @@ const Hero = () => {
               >
                 المدن الذكية
               </h1>
-              <p className="text-textMain text-xs md:text-base font-light leading-5 md:leading-[24px] text-right lg:w-[75%]">
-                لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسيسينغ إيليت سوم
-                دولار سيت أميت، كونسيكتيتور أديبيسيسينغ إيليت، سيددو أليكوا. أوت
-                إنيم أد مينيم فينيام
-              </p>
+              <motion.p
+                initial={{ opacity: 0, lineHeight: "40px" }}
+                whileInView={{
+                  opacity: 1,
+                  lineHeight: "25px",
+                  transition: { delay: 0.2, duration: 0.5 },
+                }}
+                className="text-textMain text-xs md:text-base font-light leading-5 md:leading-[24px] text-right lg:w-[75%]"
+              >
+                تطوير مدينة الباحة إلى مدينة ذكية رائدة في المملكة العربية
+                السعودية من خلال تبني تقنيات مبتكرة تُحاكي أبرز التجارب
+                العالمية، بما يحقق الاستدامة، يعزز جودة الحياة، ويرفع كفاءة
+                العمليات التشغيلية
+              </motion.p>
             </div>
-            <div className="followUs flex items-center gap-4 my-7">
+            {/* <div className="followUs flex items-center gap-4 my-7">
               <span className="text-sm font-normal text-textMain text-right">
                 تابعنا على
               </span>
@@ -68,17 +79,28 @@ const Hero = () => {
                   </a>
                 </li>
               </ul>
-            </div>
-            <img src={quote} alt="quote" className="w-[24px] md:w-[50px] h-[24px] md:h-[50px] my-4 lg:my-7" />
+            </div> */}
+            <img
+              src={quote}
+              alt="quote"
+              className="w-[24px] md:w-[50px] h-[24px] md:h-[50px] my-4 lg:my-7"
+            />
             <p className="text-[16px] md:text-[23px] font-light text-textMain leading-5 md:leading-[37px] text-right lg:w-1/2">
               نحن ملتزمون بمستقبل افضل للمملكة العربية السعودية
             </p>
-            <Link
-              to={"/"}
+            <button
+              onClick={() => setOpen(true)}
               className="flex items-center gap-4 rounded-lg border border-[#BCBCBC] w-fit py-3 px-4 my-4 text-textMain font-bold uppercase"
             >
-              <img src={play} alt="play" /> اكتشف طريقة العمـل
-            </Link>
+              <img src={play} alt="play" /> نظرة إلى المستقبل
+            </button>
+            <ModalSuccess
+              open={open}
+              setOpen={setOpen}
+              data={
+                "تتطلع المرحلة الثانية من مشروع الباحة إلى تحويلها لمدينة ذكية رائدة، مستلهمةً من تجارب عالمية مثل نيويورك في إدارة النفايات، أمستردام في الإضاءة الذكية، وسنغافورة في إدارة المياه، وذلك عبر تبنّي تقنيات الاستدامة والابتكار في مجالات إدارة النفايات بالطاقة الشمسية، والإضاءة الذكية التفاعلية، والمرور الرقمي، وأنظمة الأمن المعزّزة بالذكاء الاصطناعي. وتهدف الخطة إلى رفع كفاءة العمليات التشغيلية، وتحسين جودة الحياة، وتقليل التكاليف بنسبة 30%، وزيادة رضا السكان إلى 80%، وتعزيز كفاءة الطاقة بنحو 50%، وصولاً إلى الحياد الكربوني بحلول عام"
+              }
+            />
           </div>
           <div className="heroImg lg:basis-[60%] relative">
             <img

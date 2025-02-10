@@ -1,31 +1,56 @@
 import React from "react";
-import camera from "../../../assets/images/camera.png";
-import camera1 from "../../../assets/images/camera1.png";
-import camera2 from "../../../assets/images/camera2.png";
-import camera3 from "../../../assets/images/camera3.png";
-import camera4 from "../../../assets/images/camera4.png";
-import camera5 from "../../../assets/images/camera5.png";
-import camera6 from "../../../assets/images/camera6.png";
+import camera from "../../../assets/images/camera.webp";
+import camera1 from "../../../assets/images/camera1.webp";
+import camera2 from "../../../assets/images/camera2.webp";
+import camera3 from "../../../assets/images/camera3.webp";
+import camera4 from "../../../assets/images/camera4.webp";
+import camera5 from "../../../assets/images/camera5.webp";
+import camera6 from "../../../assets/images/camera6.webp";
+import { motion } from "framer-motion";
 const Camera = () => {
   return (
-    <section>
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="lg:py-10"
+    >
       <div className="container">
-        <div className="flex items-center gap-[25px] lg:gap-[100px]">
-          <div className="networkImg basis-1/2 rounded-3xl overflow-hidden relative shadow-video max-h-[700px]">
-            <img src={camera} alt="camera" className="w-full object-cover" />
+        <div className="flex items-center gap-[25px] xl:gap-[100px] flex-col-reverse xl:flex-row py-10 lg:py-0">
+          <div className="networkImg w-full basis-1/2 rounded-3xl overflow-hidden relative shadow-video h-[400px] lg:h-[700px] flex">
+            <img
+              src={camera}
+              alt="camera"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="networkContent basis-1/2">
             <div className="networkHeading flex flex-col gap-3">
-              <span className="text-lg font-bold leading-7 text-right text-textMain">
+              <span className="text-sm lg:text-lg font-normal lg:font-bold leading-7 text-right text-textMain">
                 الكاميرات و الاشارات
               </span>
-              <h2 className="font-extrabold text-4xl text-right text-textMain leading-[45px]">
+              <h2 className="font-bold lg:font-extrabold text-2xl lg:text-4xl text-right text-textMain lg:leading-[45px]">
                 ⁠كاميرات الطرق والاشارات
               </h2>
-              <p className="text-sm font-light text-right leading-5">
-                لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسيسينغ إيليت،
-                سيددو إيوسيمود تيمبور سوم دولار سيت أميت، كونسيكتيتور
-              </p>
+              <motion.p
+                initial={{ opacity: 0, lineHeight: "40px" }}
+                whileInView={{
+                  opacity: 1,
+                  lineHeight: "25px",
+                  transition: { delay: 0.2, duration: 0.5 },
+                }}
+                viewport={{ once: false, amount: 0.5 }}
+                exit={{
+                  opacity: 1,
+                  lineHeight: "25px",
+                  transition: { delay: 0.2, duration: 0.5 },
+                }}
+                className="text-sm lg:text-lg font-normal lg:font-bold lg:leading-7 text-right text-textMain"
+              >
+                كاميرات ذكية مخصصة لمراقبة حركة المرور بدقة عالية، مزودة بقدرات
+                التعرف على لوحات السيارات وتحليل بيانات المرور واكتشاف الحوادث،
+                مما يساهم في تحسين انسيابية الحركة وضمان سلامة الطرق
+              </motion.p>
             </div>
             <div className="networkList grid grid-cols-2 lg:grid-cols-4 gap-8 mt-7">
               <div className="networkCard p-3 flex flex-col gap-2 items-start">
@@ -77,7 +102,7 @@ const Camera = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

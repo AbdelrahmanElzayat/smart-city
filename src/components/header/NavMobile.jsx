@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 const NavMobile = ({ closeMenu }) => {
   const links = [
     { href: "/", label: "الرئيسيـة" },
-    { href: "/", label: "منهجية الشركة فى ادارة المشروع" },
-    { href: "/", label: "مراحل انشاء المشروع" },
+    { href: "/project-methodology", label: "منهجية الشركة فى ادارة المشروع" },
+    { href: "/project-stages", label: "مراحل انشاء المشروع" },
     { href: "/project-parts", label: "اجزاء المشروع" },
     { href: "/control-room", label: "المنصة و غرفة التحكم" },
-    { href: "/", label: "شركاؤنا" },
-    { href: "/", label: "تواصل معنا" },
+    { href: "/partners", label: "شركاؤنا" },
   ];
 
   return (
@@ -28,6 +27,7 @@ const NavMobile = ({ closeMenu }) => {
               className="text-textPrimary text-lg font-medium uppercase"
               onClick={() => {
                 closeMenu();
+                window.scrollTo(0, 0);
                 // pathname === "/" ? window.scrollTo(0, 0) : closeMenu();
               }}
             >
@@ -35,6 +35,18 @@ const NavMobile = ({ closeMenu }) => {
             </Link>
           </li>
         ))}
+        <li>
+          <a
+            href={"#contact-us"}
+            className="text-textPrimary text-lg font-medium uppercase"
+            onClick={() => {
+              closeMenu();
+              // pathname === "/" ? window.scrollTo(0, 0) : closeMenu();
+            }}
+          >
+            تواصل معنا
+          </a>
+        </li>
       </ul>
     </nav>
   );
